@@ -1,6 +1,7 @@
 import React from "react";
 import Switch from "@mui/material/Switch";
 import { useDarkMode, useNote } from "./TodoContext";
+import user from '../assets/astronaut.png'
 
 const Rightbar = () => {
   const { note ,setNote} = useNote();
@@ -31,7 +32,9 @@ const Rightbar = () => {
       <div className="flex-1 ">
         <div className="flex justify-center items-center gap-4">
           <div>HI, User!</div>
-          <div className=" border-2 border-black h-10 w-10 rounded-full bg-slate-700"></div>
+          <div className="  h-15 w-10 ">
+            <img src={user}/>
+          </div>
         </div>
         <div className="flex justify-between items-center mt-8">
           <div>Darkmode</div>
