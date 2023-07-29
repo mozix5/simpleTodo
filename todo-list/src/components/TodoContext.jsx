@@ -24,6 +24,7 @@ export const TodoContext = ({ children }) => {
   const [note, setNote] = useState([]);
   const [view, setView] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     // Retrieve data from local storage on component mount
@@ -69,7 +70,7 @@ export const TodoContext = ({ children }) => {
       return prevNote.map((note, index) => {
         // index===id?{...note,completed:!note.completed}:note
         if (index === id) {
-          return { ...note, completed: !note.completed }; // Toggle the note's important property
+          return { ...note, completed: !note.completed }; 
         } else {
           return note;
         }
@@ -127,6 +128,8 @@ export const TodoContext = ({ children }) => {
           getCurrentDayTasks,
           searchTasksByTitle,
           getFilteredNote,
+          searchQuery,
+          setSearchQuery,
         }}
       >
         <ViewContext.Provider value={{ view, gridView }}>
